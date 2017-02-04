@@ -26,12 +26,12 @@ freshPuzzle str =
         hits = replicate len Nothing
 
 charInWord :: Puzzle -> Char -> Bool
-charInWord (Puzzle secret hits guessed) guess =
+charInWord (Puzzle secret _ _) guess =
     guess `elem` secret
 
 
 alreadyGuessed :: Puzzle -> Char -> Bool 
-alreadyGuessed (Puzzle secret hits guessed) guess =
+alreadyGuessed (Puzzle _ _ guessed) guess =
     guess `elem` guessed
 
 renderPuzzleChar :: Maybe Char -> Char
