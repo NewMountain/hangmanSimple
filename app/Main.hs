@@ -2,7 +2,8 @@ module Main where
 
 import Data.Char (toLower)
 
-import Lib
+import Game
+import Word
 
 main :: IO ()
 main = do
