@@ -1,14 +1,11 @@
 module Main where
 
+import Data.Char (toLower)
+
 import Lib
 
-import Control.Monad (forever)
-import Data.Char (toLower)
-import Data.Maybe (isJust)
-import Data.List (intersperse)
-import System.Exit (exitSuccess)
-
-
-
 main :: IO ()
-main = someFunc
+main = do
+    word <- getRandoWord
+    let puzzle = freshPuzzle (fmap toLower word) 
+    runGame puzzle
